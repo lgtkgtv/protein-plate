@@ -1,0 +1,70 @@
+site_name: ProteinPlate
+site_description: >-
+  A free, open guide to high-protein, lower-calorie Indian home meals —
+  annotated plates, family-of-4 recipes, batch-cooking plans, grocery lists,
+  and a keto chapter. Built for public good.
+site_url: https://lgtkgtv.github.io/protein-plate/
+site_author: ProteinPlate contributors
+repo_url: https://github.com/lgtkgtv/protein-plate
+repo_name: lgtkgtv/protein-plate
+copyright: >-
+  Content licensed CC BY 4.0 · Code licensed MIT. Educational use only — not medical advice.
+
+theme:
+  name: material
+  icon:
+    logo: material/silverware-fork-knife
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - The Plate: the-plate.md
+  - Ingredients & Portions: ingredients.md
+  - Recipes: recipes.md
+  - 7-Day Meal Plan: meal-plan.md
+  - Grocery List: grocery-list.md
+  - Keto Chapter: keto.md
+  - About & Health Note: about.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lgtkgtv/protein-plate

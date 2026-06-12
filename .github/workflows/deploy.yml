@@ -1,0 +1,31 @@
+name: Deploy ProteinPlate site
+
+# Builds the MkDocs site and publishes it to the gh-pages branch
+# every time you push to main. No manual steps after the first setup.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
+
+      - name: Build and deploy to gh-pages
+        run: mkdocs gh-deploy --force
